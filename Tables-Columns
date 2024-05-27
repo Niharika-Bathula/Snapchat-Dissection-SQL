@@ -1,0 +1,57 @@
+Schema Description for Snapchat:
+The schema for Snapchat comprises various entities that represent different aspects of the platform. These entities include Users, Snaps, Stories, Chat Conversations, Discover Content, Filters, and Lenses, each with specific attributes and relationships with other entities.
+==========================================================================
+User Entity: Users are central to Snapchat, and the user entity contains information about each user:
+UserID (Primary Key): A unique identifier for each user.
+Username: The chosen username for the user's account.
+Email: The user's email address for account-related communication.
+Full_Name: The user's full name as displayed on their profile.
+Bitmoji: A personalized avatar that represents the user.
+Registration_Date: The date when the user joined Snapchat.
+=======================================================================
+Snap Entity: Snaps are at the core of Snapchat and capture visual and time-limited content:
+SnapID (Primary Key): A unique identifier for each snap.
+UserID (Foreign Key referencing User Entity): The user who created the snap.
+Media_URL: The URL of the image or video content.
+Duration: The time duration for which the snap is viewable.
+Snap_Date: The date and time when the snap was created.
+===============================================================================================
+Story Entity: Stories allow users to share content that can be viewed by their friends for a longer duration:
+StoryID (Primary Key): A unique identifier for each story.
+UserID (Foreign Key referencing User Entity): The user who created the story.
+Media_URL: The URL of the image or video content in the story.
+Duration: The time duration for which the story is viewable.
+Story_Date: The date and time when the story was created.
+=============================================================================================================
+Chat Conversation Entity: Chat conversations facilitate one-on-one and group communication on Snapchat:
+ChatID (Primary Key): A unique identifier for each chat conversation.
+Participant_1_UserID (Foreign Key referencing User Entity): User ID of the first participant.
+Participant_2_UserID (Foreign Key referencing User Entity): User ID of the second participant.
+Group_Chat: A boolean attribute indicating if the chat is a group chat.
+Last_Message_Date: The date and time of the last message in the chat.
+======================================================================================================
+Discover Content Entity: Discover content includes articles and videos from publishers and creators:
+DiscoverID (Primary Key): A unique identifier for each Discover content.
+Title: The title of the Discover article or video.
+Content_URL: The URL to access the Discover content.
+Publisher: The publisher or creator of the content.
+Publish_Date: The date the Discover content was published.
+================================================================================================
+Filter Entity: Filters are graphical overlays that users can add to their snaps:
+FilterID (Primary Key): A unique identifier for each filter.
+Name: The name or description of the filter.
+Image_URL: The URL of the filter's graphical overlay.
+Category: The category or type of filter.
+======================================================================================
+Lens Entity: Lenses are augmented reality effects that users can apply to their snaps:
+LensID (Primary Key): A unique identifier for each lens.
+Name: The name or description of the lens.
+Lens_URL: The URL to access the lens's augmented reality effects.
+Category: The category or type of lens.
+=========================================================================================
+Relationships:
+Users send Snaps and Stories – Each user can create multiple snaps and stories.
+Users engage in Chat Conversations – Users participate in multiple chat conversations.
+Users discover Discover Content – Users can access various pieces of Discover content.
+Users use Filters – Users can apply different filters to their snaps.
+Users apply Lenses – Users can use various lenses for augmented reality effects.
